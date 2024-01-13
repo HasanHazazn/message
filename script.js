@@ -12,6 +12,9 @@ const audioNo = new Audio('audio-no.mp3');      // Path to the 'no' audio file
 let currentYesAudio = audioYes1;
 let questionNumber = 1;  // Keep track of the question number
 
+// Initially hide the "Next" button
+nextBtn.style.display = "none";
+
 yesBtn.addEventListener("click", () => {
     // Change the audio each time 'Yes' is clicked
     if (currentYesAudio === audioYes1) {
@@ -22,10 +25,8 @@ yesBtn.addEventListener("click", () => {
 
     currentYesAudio.play();
 
-    // Show the "Next" button after the first "Yes"
-    if (questionNumber === 1) {
-        nextBtn.style.display = "block";
-    }
+    // Show the "Next" button after the user clicks "Yes" for the current question
+    nextBtn.style.display = "block";
 
     // Handle different questions here based on the questionNumber
     if (questionNumber === 1) {
@@ -53,6 +54,9 @@ nextBtn.addEventListener("click", () => {
     question.innerHTML = "Hey, will you let me know you :)";
     gif.src = "https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif";
     currentYesAudio = audioYes1;
+
+    // Hide the "Next" button after it is clicked
+    nextBtn.style.display = "none";
 });
 
 function moveNoButton() {
