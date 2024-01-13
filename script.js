@@ -15,33 +15,31 @@ let questionNumber = 1;  // Keep track of the question number
 // Initially hide the "Next" button
 nextBtn.style.display = "none";
 
-yesBtn.addEventListener("click", () => {
-    // Change the audio each time 'Yes' is clicked
-    if (currentYesAudio === audioYes1) {
-        currentYesAudio = audioYes2;
-    } else {
-        currentYesAudio = audioYes1;
-    }
-
-    currentYesAudio.play();
-
+function showNextQuestion() {
     // Show the "Next" button after the user clicks "Yes" for the current question
     nextBtn.style.display = "block";
 
-    // Handle different questions here based on the questionNumber
-    if (questionNumber === 1) {
-        question.innerHTML = "I am the happiest man in the world..hehe";
-        gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
-    } else if (questionNumber === 2) {
-        question.innerHTML = "Second question goes here...";
-        // Update the gif and other details for the second question
-    } else {
-        // If there are no more questions, hide the "Next" button
-        nextBtn.style.display = "none";
-    }
-
     // Increment the question number
     questionNumber++;
+
+    // Handle different questions here based on the questionNumber
+    if (questionNumber === 2) {
+        question.innerHTML = "Second question goes here...";
+        // Update the gif and other details for the second question
+    } else if (questionNumber === 3) {
+        question.innerHTML = "Third question goes here...";
+        // Update the gif and other details for the third question
+        // Since it's the last question, hide the "Next" button
+        nextBtn.style.display = "none";
+    }
+}
+
+yesBtn.addEventListener("click", () => {
+    // Change the audio each time 'Yes' is clicked
+    currentYesAudio = (currentYesAudio === audioYes1) ? audioYes2 : audioYes1;
+    currentYesAudio.play();
+
+    showNextQuestion();
 });
 
 noBtn.addEventListener("mouseover", () => {
