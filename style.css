@@ -1,5 +1,6 @@
-*
-{
+/* Updated CSS including styles for side images */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,6 +15,22 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.side-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.left-image,
+.right-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .gif {
     height: 100%;
     width: 100%;
@@ -25,6 +42,7 @@ h2 {
     color: #e94d58;
     margin: 15px 0;
 }
+
 .btn-group {
     width: 100%;
     height: 50px;
@@ -32,6 +50,7 @@ h2 {
     justify-content: center;
     margin-top: 50px;
 }
+
 button {
     position: absolute;
     width: 150px;
@@ -45,12 +64,15 @@ button {
     border: 2px solid #e94d58;
     font-size: 1.2em;
 }
+
 button:nth-child(1) {
     margin-left: -200px;
     background: #e94d58;
 }
+
 button:nth-child(2) {
     margin-right: -200px;
     background: white;
     color: #e94d58;
 }
+
