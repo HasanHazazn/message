@@ -4,24 +4,13 @@ const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 
-const audioYes1 = new Audio('audio222.mp3');  // Path to the first 'yes' audio file
-const audioYes2 = new Audio('audio222.mp3');  // Path to the second 'yes' audio file
-const audioNo = new Audio('audio-no.mp3');      // Path to the 'no' audio file
-
-let currentYesAudio = audioYes1;
+const audioYes = new Audio('audio-yes.mp3');  // Path to the 'yes' audio file
+const audioNo = new Audio('audio-no.mp3');    // Path to the 'no' audio file
 
 yesBtn.addEventListener("click", () => {
     question.innerHTML = "I am the happiest man in the world..hehe";
     gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
-
-    // Change the audio each time 'Yes' is clicked
-    if (currentYesAudio === audioYes1) {
-        currentYesAudio = audioYes2;
-    } else {
-        currentYesAudio = audioYes1;
-    }
-
-    currentYesAudio.play();
+    audioYes.play();
 });
 
 noBtn.addEventListener("mouseover", () => {
