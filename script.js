@@ -16,11 +16,9 @@ let questionNumber = 1;  // Keep track of the question number
 nextBtn.style.display = "none";
 
 function showNextQuestion() {
-    // Show the "Next" button after the user clicks "Yes" for the current question
-    nextBtn.style.display = "block";
-
-    // Increment the question number
+    // Increment the question number and hide the "Next" button
     questionNumber++;
+    nextBtn.style.display = "none";
 
     // Handle different questions here based on the questionNumber
     if (questionNumber === 2) {
@@ -29,8 +27,6 @@ function showNextQuestion() {
     } else if (questionNumber === 3) {
         question.innerHTML = "Third question goes here...";
         // Update the gif and other details for the third question
-        // Since it's the last question, hide the "Next" button
-        nextBtn.style.display = "none";
     }
 }
 
@@ -39,32 +35,4 @@ yesBtn.addEventListener("click", () => {
     currentYesAudio = (currentYesAudio === audioYes1) ? audioYes2 : audioYes1;
     currentYesAudio.play();
 
-    showNextQuestion();
-});
-
-noBtn.addEventListener("mouseover", () => {
-    moveNoButton();
-    audioNo.play();
-});
-
-nextBtn.addEventListener("click", () => {
-    // Reset to the initial state for the next question
-    question.innerHTML = "Hey, will you let me know you :)";
-    gif.src = "https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif";
-    currentYesAudio = audioYes1;
-
-    // Hide the "Next" button after it is clicked
-    nextBtn.style.display = "none";
-});
-
-function moveNoButton() {
-    const noBtnRect = noBtn.getBoundingClientRect();
-    const maxX = window.innerWidth - noBtnRect.width;
-    const maxY = window.innerHeight - noBtnRect.height;
-
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
-
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
-}
+    // Show the "Next" button after the user clicks "Yes"
