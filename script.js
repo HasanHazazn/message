@@ -13,7 +13,7 @@ yesBtn.addEventListener("click", () => {
     audioYes.play();
 });
 
-noBtn.addEventListener("mouseover", () => {
+noBtn.addEventListener("touchstart", (event) => {
     const noBtnRect = noBtn.getBoundingClientRect();
     const maxX = window.innerWidth - noBtnRect.width;
     const maxY = window.innerHeight - noBtnRect.height;
@@ -23,5 +23,9 @@ noBtn.addEventListener("mouseover", () => {
 
     noBtn.style.left = randomX + "px";
     noBtn.style.top = randomY + "px";
+
+    // Prevent default touch event behavior to avoid issues on some devices
+    event.preventDefault();
+
     audioNo.play();
 });
