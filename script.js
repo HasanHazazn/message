@@ -38,7 +38,7 @@ function moveNoButton() {
 }
 
 yesBtn.addEventListener("click", () => {
-    question.innerHTML = "I'm gonna make you smile and spend some time as long as you are here";
+    question.innerHTML = "I'm gonna make you smile and watch it as long as you let me";
     gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
     audioYes.play();
 });
