@@ -4,8 +4,8 @@ const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 
-const audioYes = new Audio('ive-got-my-eye-on-you-sped-up-lyrics-tuberippercom_yNbthvyf.mp3');  // Path to the 'yes' audio file
-const audioNo = new Audio('ive-got-my-eye-on-you-sped-up-lyrics-tuberippercom_yNbthvyf.mp3');    // Path to the 'no' audio file
+// const audioYes = new Audio('ive-got-my-eye-on-you-sped-up-lyrics-tuberippercom_yNbthvyf.mp3');  // Path to the 'yes' audio file
+// const audioNo = new Audio('ive-got-my-eye-on-you-sped-up-lyrics-tuberippercom_yNbthvyf.mp3');    // Path to the 'no' audio file
 
 // Check if the user is on a mobile device
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
